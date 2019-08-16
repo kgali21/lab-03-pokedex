@@ -19,13 +19,7 @@ body{
     list-style-type: none;
     justify-content: center;
     align-content: center;  
-}
-
-li{
-    height: 200px;
-    min-width: 20vw;
-    border: 1px solid white;
-    margin: 5vw 5vh;
+    object-fit: contain;
 }
 
 footer{

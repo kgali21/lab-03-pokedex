@@ -1,0 +1,22 @@
+li{
+    height: 200px;
+    min-width: 20vw;
+    border: 1px solid white;
+    margin: 5vw 5vh;
+}
+
+.picContainer {
+    height: 100%;
+}
+
+#pokeImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+.title {
+    text-align: center;
+    background-color: rgb(255, 255, 255, .50);
+    
+}
