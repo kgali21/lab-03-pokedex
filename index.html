@@ -8,13 +8,13 @@
     <title>Pokedex</title>
     <link rel="stylesheet" href="./src/main.css">
     <link rel="stylesheet" href="./src/pokemon.css">
-    <!-- <link rel="stylesheet" href="./src/reset.css"> -->
 </head>
 
 <body>
     <header class="poke-title">
         <h1>PokeDex</h1>
     </header>
+    <section class="filter-section"></section>
     <aside>
         <select class="poke-filter">
             <option value="All Pokemon">All Pokemon</option>
@@ -25,7 +25,9 @@
             <option value="fire-type">Fire Type</option>
         </select>
     </aside>
+    <section class="list-section">
     <ul class="poke-content">
+        </section>
         <li class="poke-container">
             <div class="title">
                 <p>Charmander</p>
@@ -84,6 +86,8 @@
     <footer class="poke-slogan">
         <p>Gotta Catch em' All!</p>
     </footer>
-</body>
 
+    <div id="root"></div>
+</body>
+<script src="./src/components/test/index.js"></script>
 </html>
