@@ -1,7 +1,6 @@
 const images = [
 
     {
-        _id: 5cef3501ef6005a77cd4fd1a',
         pokemon: 'charmander',
         id: 5,
         species_id: 4,
@@ -32,6 +31,8 @@ const images = [
         shape: 'upright',
         pokebase: 'charmander',
         pokedex: 'http://www.pokemon.com/us/pokedex/charmander'
-    },
+    }
 
 ];
+
+export default images;

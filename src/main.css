@@ -7,19 +7,15 @@ body{
     background-color: #ee4131;
 }
 
+aside{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
 .filter{
     width: 100px;
     align-content: center;
-}
-
-.poke-content{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style-type: none;
-    justify-content: center;
-    align-content: center;  
-    object-fit: contain;
 }
 
 footer{
@@ -27,8 +23,8 @@ footer{
 }
 
 @media (min-width: 700px){
-    #pokeContent {
-        display: flex;
-        flex-direction: column;
+    aside {
+        flex-direction: row;
+        margin: 0px 10px;
     }
 }
