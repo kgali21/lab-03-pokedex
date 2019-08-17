@@ -1,10 +1,11 @@
 import Component from '../Component.js';
 import Header from './header.js';
 import Pokemon from './PokemonList.js';
-import images from './pokeImageList.js';
+// import images from './pokeImageList.js';
 import { getPokemon } from '../options/pokemonAPI.js';
 import hashStorage from '../options/hash-storage.js';
 import Search from '../options/search.js';
+import Paging from '../options/paging.js';
 
 class Apps extends Component {
 
@@ -13,19 +14,20 @@ class Apps extends Component {
         const headerDOM = header.renderDOM();
         dom.prepend(headerDOM);
 
-        const props = {
-            images: images
-        };
+        // const props = {
+        //     images: images
+        // };
         
-        const pokemon = new Pokemon(props);
-        const pokemonDOM = pokemon.renderDOM();
+        // const pokemon = new Pokemon(props);
+        // const pokemonDOM = pokemon.renderDOM();
 
         const optionsSection = dom.querySelector('.options-section');
         const search = new Search();
         optionsSection.appendChild(search.renderDOM());
 
         const listSection = dom.querySelector('.list-section');
-        listSection.appendChild(pokemonDOM);
+        const paging = new Paging();
+        listSection.appendChild(paging.renderDOM());
 
         const pokemonList = new Pokemon({ images: [] });
         listSection.appendChild(pokemonList.renderDOM());
@@ -72,6 +74,13 @@ class Apps extends Component {
         </section>
         <section class="list-section">
             <ul class="poke-content"></ul>
+            <div>
+        <p class="paging">
+            <button class="prev"><</button>
+            <span></span>
+            <button class="next">></button>
+        </p>
+        </div>
         </section>
         <footer class="poke-slogan">
             <p>Gotta Catch em' All!</p>

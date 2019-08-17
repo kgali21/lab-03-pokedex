@@ -17,7 +17,6 @@ class Pokemon extends Component {
     renderHTML(){
         return /*html*/ `
         <ul class="poke-content"></ul>
-        
         `;
     }
 }
