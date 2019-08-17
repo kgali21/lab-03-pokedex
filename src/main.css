@@ -22,6 +22,10 @@ footer{
     text-align: center;
 }
 
+.options-section {
+    width: 20vw;
+}
+
 @media (min-width: 700px){
     aside {
         flex-direction: row;

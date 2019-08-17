@@ -4,6 +4,7 @@ import Pokemon from './PokemonList.js';
 import images from './pokeImageList.js';
 import { getPokemon } from '../options/pokemonAPI.js';
 import hashStorage from '../options/hash-storage.js';
+import Search from '../options/search.js';
 
 class Apps extends Component {
 
@@ -15,9 +16,13 @@ class Apps extends Component {
         const props = {
             images: images
         };
-        console.log(props);
+        
         const pokemon = new Pokemon(props);
         const pokemonDOM = pokemon.renderDOM();
+
+        const optionsSection = dom.querySelector('.options-section');
+        const search = new Search();
+        optionsSection.appendChild(search.renderDOM());
 
         const listSection = dom.querySelector('.list-section');
         listSection.appendChild(pokemonDOM);
@@ -53,7 +58,7 @@ class Apps extends Component {
     renderHTML() {
         return /*html*/ `
         <div>
-        <section class="filter-section">
+        <section class="options-section">
         <aside>
         <select class="poke-filter">
             <option value="All Pokemon">All Pokemon</option>
@@ -68,7 +73,8 @@ class Apps extends Component {
         <section class="list-section">
             <ul class="poke-content"></ul>
         </section>
-        <footer>
+        <footer class="poke-slogan">
+            <p>Gotta Catch em' All!</p>
         </footer>
         </div>
         `;
