@@ -8,7 +8,7 @@ const QUERY = {
         return queryProps;
     },
 
-    stringy(queryProps) {
+    stringify(queryProps) {
         const searchParams = new URLSearchParams();
 
         const keys = Object.keys(queryProps);
