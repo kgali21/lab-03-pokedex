@@ -36,10 +36,10 @@ class Apps extends Component {
             const options = hashStorage.get();
             getPokemon(options)
                 .then(data => {
-                    const pokemon = data.results;
+                    const pokemon = data.results.results;
                     const totalPokemon = data.pokemon;
 
-                    pokemonList.update({ pokemon: pokemon });
+                    pokemonList.update({ images: pokemon });
                     paging.update({
 
                         totalPokemon: totalPokemon,
