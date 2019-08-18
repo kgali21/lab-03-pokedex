@@ -14,13 +14,6 @@ class Apps extends Component {
         const headerDOM = header.renderDOM();
         dom.prepend(headerDOM);
 
-        // const props = {
-        //     images: images
-        // };
-        
-        // const pokemon = new Pokemon(props);
-        // const pokemonDOM = pokemon.renderDOM();
-
         const optionsSection = dom.querySelector('.options-section');
         const search = new Search();
         optionsSection.appendChild(search.renderDOM());
