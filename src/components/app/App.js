@@ -1,11 +1,11 @@
 import Component from '../Component.js';
 import Header from './header.js';
 import Pokemon from './PokemonList.js';
-// import images from './pokeImageList.js';
 import { getPokemon } from '../options/pokemonAPI.js';
 import hashStorage from '../options/hash-storage.js';
 import Search from '../options/search.js';
 import Paging from '../options/paging.js';
+// import FilterPokemon from './filterPokemon.js';
 
 class Apps extends Component {
 
@@ -13,17 +13,43 @@ class Apps extends Component {
         const header = new Header();
         const headerDOM = header.renderDOM();
         dom.prepend(headerDOM);
-
-        const optionsSection = dom.querySelector('.options-section');
+        
+        const searchSection = dom.querySelector('.options-section');
         const search = new Search();
-        optionsSection.appendChild(search.renderDOM());
+        searchSection.appendChild(search.renderDOM());
 
-        const listSection = dom.querySelector('.list-section');
+        const listSection = dom.querySelector('.paging');
         const paging = new Paging();
         listSection.appendChild(paging.renderDOM());
 
         const pokemonList = new Pokemon({ images: [] });
         listSection.appendChild(pokemonList.renderDOM());
+
+        // const props = {
+        //     images: type1
+        // };
+
+        // const pokemonListSection = {
+        //     images: type1,
+        //     onFilter: (type1) => {
+        //         let filteredPokemon;
+        //         if(type1 === 'all'){
+        //             filteredPokemon = type1;
+        //         }
+        //         else {
+        //             filteredPokemon = type1.filter(image => {
+        //                 return image.pokemonList == type1;
+        //             });
+        //         }
+        //         const updateProps = { images: filteredPokemon };
+        //         type1.update(updateProps);
+        //     }
+        // };
+        // const filterPokemans = new FilterPokemon(filterPokemonProps);
+        // const filterPokemonDOM = filterPokemans.rednerDOM();
+
+        // const filterSection = dom.querySelector('.filter-section');
+        // filterSection.appendChild(filterPokemonDOM);
 
         function loadPokemon() {
             const options = hashStorage.get();
