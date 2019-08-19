@@ -1,0 +1,49 @@
+li{
+    /* height: 200px;
+    min-width: 20vw; */
+    border: 2px solid black;
+    margin: 5vw 5vh;
+    background-color:white;
+
+}
+
+.poke-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none; 
+    justify-content: center;
+}
+
+.pic-container {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+#poke-image {
+    width: 20vw;
+    height: 20%;
+    object-fit: cover;
+}
+
+.title {
+    text-align: center;
+    background-color: rgb(255, 255, 255, .50);
+}
+
+.poke-filter {
+    margin: 10px 0px;
+}
+
+.poke-sort {
+    margin: 10px 0px;
+}
+
+@media (min-width: 700px){
+    #poke-content {
+        display: flex;
+        flex-direction: column;
+    }
