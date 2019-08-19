@@ -1,4 +1,4 @@
-import PokeItem from '../app/pokeItem.js';
+import PokeItem from '../src/components/app/pokeItem.js';
 const test = QUnit.test;
 
 QUnit.module('pokemonItem');

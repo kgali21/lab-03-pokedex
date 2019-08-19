@@ -1,4 +1,4 @@
-import QUERY from '../options/QUERY.js';
+import QUERY from '../src/components/options/QUERY.js';
 const test = QUnit.test;
 
 QUnit.module('Query String Parser');
