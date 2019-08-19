@@ -11,7 +11,8 @@ class Search extends Component {
 
             hashStorage.set({
                 search: search,
-                page: 1
+                page: 1,
+               
             });
         });
         const input = form.querySelector('input');

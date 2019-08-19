@@ -31,7 +31,7 @@ class Paging extends Component {
         const currentPage = this.props.currentPage || 1;
         const perPage = 20;
         const totalCount = this.props.totalCount;
-
+    
         if(!totalCount) {
             return /*html*/`
             <p class="paging"> No Results </p>
@@ -39,15 +39,12 @@ class Paging extends Component {
         }
 
         const lastPage = Math.ceil(totalCount / perPage);
-
         return /*html*/`
-        <div>
         <p class="paging">
-            <button class="prev" ${currentPage === 1 ? 'disable' : ''}>◀</button>
+            <button class="prev" ${currentPage === 1 ? 'disable' : ''}><</button>
             <span>Page ${currentPage} of ${lastPage}</span>
-            <button class="next" ${currentPage === lastPage ? 'disbaled' : ''}>▶</button>
+            <button class="next" ${currentPage === lastPage ? 'disabled' : ''}>></button>
         </p>
-        </div>
     `;
     }
 }

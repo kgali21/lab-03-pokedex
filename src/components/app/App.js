@@ -5,7 +5,6 @@ import { getPokemon } from '../options/pokemonAPI.js';
 import hashStorage from '../options/hash-storage.js';
 import Search from '../options/search.js';
 import Paging from '../options/paging.js';
-// import FilterPokemon from './filterPokemon.js';
 
 class Apps extends Component {
 
@@ -18,50 +17,24 @@ class Apps extends Component {
         const search = new Search();
         searchSection.appendChild(search.renderDOM());
 
-        const listSection = dom.querySelector('.paging');
+        const listSection = dom.querySelector('.list-section');
+
         const paging = new Paging();
         listSection.appendChild(paging.renderDOM());
 
         const pokemonList = new Pokemon({ images: [] });
         listSection.appendChild(pokemonList.renderDOM());
 
-        // const props = {
-        //     images: type1
-        // };
-
-        // const pokemonListSection = {
-        //     images: type1,
-        //     onFilter: (type1) => {
-        //         let filteredPokemon;
-        //         if(type1 === 'all'){
-        //             filteredPokemon = type1;
-        //         }
-        //         else {
-        //             filteredPokemon = type1.filter(image => {
-        //                 return image.pokemonList == type1;
-        //             });
-        //         }
-        //         const updateProps = { images: filteredPokemon };
-        //         type1.update(updateProps);
-        //     }
-        // };
-        // const filterPokemans = new FilterPokemon(filterPokemonProps);
-        // const filterPokemonDOM = filterPokemans.rednerDOM();
-
-        // const filterSection = dom.querySelector('.filter-section');
-        // filterSection.appendChild(filterPokemonDOM);
-
         function loadPokemon() {
             const options = hashStorage.get();
             getPokemon(options)
                 .then(data => {
                     const pokemon = data.results.results;
-                    const totalPokemon = data.pokemon;
-
+                    const totalPokemon = data.results.count;
                     pokemonList.update({ images: pokemon });
                     paging.update({
 
-                        totalPokemon: totalPokemon,
+                        totalCount: totalPokemon,
                         currentPage: +options.page
                     });
 
@@ -79,26 +52,10 @@ class Apps extends Component {
     renderHTML() {
         return /*html*/ `
         <div>
-        <section class="options-section">
-        <aside>
-        <select class="poke-filter">
-            <option value="All Pokemon">All Pokemon</option>
-            <option value="fire-type">Fire Type</option>
-        </select>
-        <select class="poke-sort">
-            <option value="All Pokemon">All Pokemon</option>
-            <option value="fire-type">Fire Type</option>
-        </select>
-         </aside>
-        </section>
+        <section class="options-section"></section>
         <section class="list-section">
             <ul class="poke-content"></ul>
             <div>
-        <p class="paging">
-            <button class="prev"><</button>
-            <span></span>
-            <button class="next">></button>
-        </p>
         </div>
         </section>
         <footer class="poke-slogan">
