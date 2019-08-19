@@ -5,7 +5,6 @@ class Pokemon extends Component {
 
     onRender(dom) {
         const pokemon = this.props.images;
-
         pokemon.forEach(images => {
             const props = { images: images };
             const pokeItem = new PokeItem(props);

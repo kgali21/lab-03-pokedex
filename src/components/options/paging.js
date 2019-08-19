@@ -41,7 +41,7 @@ class Paging extends Component {
         const lastPage = Math.ceil(totalCount / perPage);
         return /*html*/`
         <p class="paging">
-            <button class="prev" ${currentPage === 1 ? 'disable' : ''}><</button>
+            <button class="prev" ${currentPage === 1 ? 'disabled' : ''}><</button>
             <span>Page ${currentPage} of ${lastPage}</span>
             <button class="next" ${currentPage === lastPage ? 'disabled' : ''}>></button>
         </p>
